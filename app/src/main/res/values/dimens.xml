@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fixed_width">240dp</dimen>
+    <dimen name="fixed_height">240dp</dimen>
+    <dimen name="space_width">32dp</dimen>
+</resources>

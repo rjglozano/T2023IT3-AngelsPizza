@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "76410675565",
+    "project_id": "t2023it2-angelspizza",
+    "storage_bucket": "t2023it2-angelspizza.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76410675565:android:d0f08908274ed47e01ba64",
+        "android_client_info": {
+          "package_name": "com.example.t2023it3_angelspizza"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtH8GLg1da14nhVVyAb2g3QMEV0k7x0ms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
