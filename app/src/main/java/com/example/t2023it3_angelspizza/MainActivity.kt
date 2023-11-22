@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                     val description = document.data["description"].toString()
                     val photoUrl = document.data["photoUrl"].toString()
                     val priceTemp = document.data["price"].toString()
-                    val price = String.format("Php %.2f", priceTemp.toFloat())
+                    val price = String.format("PHP %.2f", priceTemp.toFloat())
 
                     val cardView = CardView(this)
                     val layoutParams = LinearLayout.LayoutParams(
@@ -61,9 +61,9 @@ class MainActivity : AppCompatActivity() {
                     layoutParams.setMargins(16, 16, 16, 16)
                     cardView.layoutParams = layoutParams
                     cardView.cardElevation = 10f
-                    cardView.radius = 20f
-                    cardView.setBackgroundResource(R.color.angels_black)
-                    cardView.setContentPadding(32, 32, 32, 32)
+                    cardView.radius = 30f
+                    cardView.setCardBackgroundColor(resources.getColor(R.color.angels_black, null))
+                    cardView.setContentPadding(32, 0, 32, 32)
 
                     val contentLayout = LinearLayout(this)
                     contentLayout.orientation = LinearLayout.VERTICAL
@@ -79,6 +79,8 @@ class MainActivity : AppCompatActivity() {
                     imageLayoutParams.gravity = Gravity.CENTER
                     imageView.layoutParams = imageLayoutParams
                     contentLayout.addView(imageView)
+
+
 
                     val nameTextView = TextView(this)
                     val nameLayout = LinearLayout.LayoutParams(
