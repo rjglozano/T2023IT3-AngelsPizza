@@ -68,5 +68,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/logo_new" />
+        tools:srcCompat="@drawable/logo_new"
+        android:src="@drawable/logo_new"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
