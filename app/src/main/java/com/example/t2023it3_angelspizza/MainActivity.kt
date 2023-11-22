@@ -89,6 +89,7 @@ class MainActivity : AppCompatActivity() {
                     nameTextView.textSize = 28F
                     nameTextView.setTypeface(null, Typeface.BOLD)
                     nameLayout.gravity = Gravity.CENTER
+                    nameTextView.gravity = Gravity.CENTER
                     nameTextView.layoutParams = nameLayout
                     contentLayout.addView(nameTextView)
                     nameTextView.setTextColor(getColor(R.color.white))

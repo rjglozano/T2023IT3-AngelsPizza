@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/angels_black"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity"
@@ -51,15 +53,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Add Item" />
+            android:backgroundTint="#000000"
+            android:text="Add Item"
+            android:textColorLink="#000000"
+            app:cornerRadius="3dp" />
 
         <Button
             android:id="@+id/btnBackToMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Back to Menu" />
+            android:backgroundTint="@color/angels_black"
+            android:text="Back to Menu"
+            app:cornerRadius="3dp" />
 
-    </LinearLayout><![CDATA[
+    </LinearLayout>
+    <![CDATA[
 
     />
 

@@ -52,7 +52,7 @@
             android:id="@+id/btn_Login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#000000"
+            android:backgroundTint="@color/angels_black"
             android:text="Login"
             android:textAlignment="center"
             app:cornerRadius="3dp" />

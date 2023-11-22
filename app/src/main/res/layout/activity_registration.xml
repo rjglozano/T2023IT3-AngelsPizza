@@ -73,7 +73,7 @@
             android:layout_width="215dp"
             android:layout_height="55dp"
             android:layout_marginBottom="108dp"
-            android:backgroundTint="#000000"
+            android:backgroundTint="@color/angels_black"
             android:text="Register and Login"
             app:cornerRadius="3dp" />
     </LinearLayout>
