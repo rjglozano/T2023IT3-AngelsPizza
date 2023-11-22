@@ -1,21 +1,17 @@
 <!-- res/layout/activity_details.xml -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ProductDetails">
 
     <!-- ImageView for displaying the image -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/itemImageView"
@@ -23,34 +19,59 @@
             android:layout_height="200dp"
             android:scaleType="centerCrop" />
 
-        <TextView
-            android:id="@+id/itemNameTextView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center|center_horizontal"
-            android:text="Item Name"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:layout_margin="15dp"
+            android:orientation="vertical"
+            tools:ignore="WebViewLayout">
 
-        <WebView
-            android:id="@+id/itemDescriptionTextView"
+            <TextView
+                android:id="@+id/itemNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center|center_horizontal"
+                android:text="Item Name"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <WebView
+                android:id="@+id/itemDescriptionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/itemImageView" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/itemImageView"/>
-        <TextView
-            android:id="@+id/itemPriceTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Item Price"
-            android:textAlignment="viewStart"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:layout_margin="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/itemPriceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="Item Price"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Back to Menu" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
     <!-- Add TextViews for other details -->
 
-</RelativeLayout>
+</LinearLayout>

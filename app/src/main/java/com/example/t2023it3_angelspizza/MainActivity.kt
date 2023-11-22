@@ -19,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.marginTop
 import com.bumptech.glide.Glide
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FirebaseFirestore
 
 
@@ -29,6 +31,8 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        lateinit var btnLogout : Button
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -48,7 +52,6 @@ class MainActivity : AppCompatActivity() {
                     val priceTemp = document.data["price"].toString()
                     val price = String.format("Php %.2f", priceTemp.toFloat())
 
-                    // Create a CardView dynamically
                     val cardView = CardView(this)
                     val layoutParams = LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
@@ -56,17 +59,14 @@ class MainActivity : AppCompatActivity() {
                     )
                     layoutParams.setMargins(16, 16, 16, 16)
                     cardView.layoutParams = layoutParams
-                    cardView.cardElevation = 10f // Optional: Add elevation for a shadow effect
-                    cardView.radius = 20f // Optional: Set corner radius for rounded corners
-                    cardView.setContentPadding(32, 32, 32, 32) // Add padding to the content inside the CardView
+                    cardView.cardElevation = 10f
+                    cardView.radius = 20f
+                    cardView.setContentPadding(32, 32, 32, 32)
 
-
-                    // Create a vertical LinearLayout for the content
                     val contentLayout = LinearLayout(this)
                     contentLayout.orientation = LinearLayout.VERTICAL
                     cardView.addView(contentLayout)
 
-                    // Create an ImageView for the image
                     val imageView = ImageView(this)
                     Glide.with(this).load(photoUrl).into(imageView)
                     val imageLayoutParams = LinearLayout.LayoutParams(
@@ -75,15 +75,12 @@ class MainActivity : AppCompatActivity() {
                     )
 
                     imageLayoutParams.gravity = Gravity.CENTER
-
                     imageView.layoutParams = imageLayoutParams
                     contentLayout.addView(imageView)
 
-
-                    // Create a TextView for the name
                     val nameTextView = TextView(this)
                     val nameLayout = LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.WRAP_CONTENT, // or MATCH_PARENT, depending on your needs
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                     )
                     nameTextView.text = "$name"
@@ -93,15 +90,14 @@ class MainActivity : AppCompatActivity() {
                     nameTextView.layoutParams = nameLayout
                     contentLayout.addView(nameTextView)
 
-                    // Create a TextView for the description
-                    val descriptionWebView = WebView(this)
-                    val descriptionLayout = LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT
-                    )
-                    descriptionWebView.loadDataWithBaseURL(null, "<html><body style='text-align:justify;'>$description</body></html>", "text/html", "UTF-8", null)
-                    descriptionWebView.layoutParams = descriptionLayout
-                    contentLayout.addView(descriptionWebView)
+//                    val descriptionWebView = WebView(this)
+//                    val descriptionLayout = LinearLayout.LayoutParams(
+//                        LinearLayout.LayoutParams.MATCH_PARENT,
+//                        LinearLayout.LayoutParams.WRAP_CONTENT
+//                    )
+//                    descriptionWebView.loadDataWithBaseURL(null, "<html><body style='text-align:justify;'>$description</body></html>", "text/html", "UTF-8", null)
+//                    descriptionWebView.layoutParams = descriptionLayout
+//                    contentLayout.addView(descriptionWebView)
 
 
                     val priceDetails = LinearLayout(this)
@@ -110,7 +106,6 @@ class MainActivity : AppCompatActivity() {
 
                     contentLayout.addView(priceDetails)
 
-                    // Create a TextView for the price
                     val priceTextView = TextView(this)
                     val priceLayout = LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -123,7 +118,6 @@ class MainActivity : AppCompatActivity() {
                     priceTextView.layoutParams = priceLayout
                     priceDetails.addView(priceTextView)
 
-                    // Add space between priceTextView and btnViewDetails
                     val spaceView = View(this)
                     spaceView.layoutParams = LinearLayout.LayoutParams(
                         resources.getDimensionPixelSize(R.dimen.space_width),
@@ -166,9 +160,29 @@ class MainActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.e("FirestoreData", "Error getting documents: ${exception.message}")
             }
+            btnLogout = findViewById(R.id.btnLogout)
+
+            btnLogout.setOnClickListener {
+                Firebase.auth.signOut()
+                val loginActivity = Intent(this, Login::class.java)
+                startActivity(loginActivity)
+            }
+
+    }
+
+    public override fun onStart() {
+        super.onStart()
+
+        val auth = Firebase.auth
+        val currentUser = auth.currentUser
+        if (currentUser == null) {
+            val loginActivity = Intent(this, Login::class.java)
+            startActivity(loginActivity)
+        }
 
 
     }
+
 
 
 }

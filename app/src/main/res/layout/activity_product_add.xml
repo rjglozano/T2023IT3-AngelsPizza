@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
 
 
     <LinearLayout
@@ -17,14 +18,16 @@
             android:id="@+id/editTextItemName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Item Name" />
+            android:hint="Item Name"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/editTextItemDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="Item Description" />
+            android:hint="Item Description"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/editTextItemPrice"
@@ -32,14 +35,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:hint="Item Price"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/editTextItemPhotoUrl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:hint="Item Photo Url" />
+            android:hint="Item Photo Url"
+            android:minHeight="48dp" />
 
         <Button
             android:id="@+id/buttonAddItem"

@@ -1,13 +1,22 @@
 package com.example.t2023it3_angelspizza
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.google.firebase.firestore.FirebaseFirestore
+import java.time.Instant
+import java.time.LocalDate
+import java.time.ZoneOffset
+import java.util.Date
+
+
+
 
 class ProductAdd : AppCompatActivity() {
 
@@ -15,6 +24,7 @@ class ProductAdd : AppCompatActivity() {
     private val itemsCollection = db.collection("items")
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_add)
@@ -26,6 +36,7 @@ class ProductAdd : AppCompatActivity() {
         val addItemButton = findViewById<Button>(R.id.buttonAddItem)
         val btnBackToMenu = findViewById<Button>(R.id.btnBackToMenu)
 
+
         btnBackToMenu.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -36,14 +47,21 @@ class ProductAdd : AppCompatActivity() {
             val description = itemDescriptionEditText.text.toString()
             val price = itemPriceEditText.text.toString().toDoubleOrNull()
             val photoUrl = editTextItemPhotoUrl.text.toString()
+//
+//            val dateNow = LocalDate.now().atStartOfDay(ZoneOffset.UTC).toInstant().toEpochMilli()
+//            val dateCreated = Date(dateNow)
 
+
+            val dateNow = Instant.now().toEpochMilli()
+            val dateCreated = Date(dateNow)
 
             if (name.isNotEmpty() && description.isNotEmpty() && price != null) {
                 val newItem = hashMapOf(
                     "name" to name,
                     "description" to description,
                     "photoUrl" to photoUrl,
-                    "price" to price
+                    "price" to price,
+                    "dateCreated" to dateCreated
                 )
 
                 addItemToFirestore(newItem)
