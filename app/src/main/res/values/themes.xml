@@ -4,6 +4,8 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
-
+    <style name="MyTheme" parent="@android:style/Theme.Light">
+        <item name="android:windowBackground">@color/angels_yellow</item>
+    </style>
     <style name="Theme.T2023IT3AngelsPizza" parent="Base.Theme.T2023IT3AngelsPizza" />
 </resources>

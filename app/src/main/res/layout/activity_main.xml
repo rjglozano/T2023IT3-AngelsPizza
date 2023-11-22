@@ -5,15 +5,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/MyTheme"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
+
 
     <!-- Add other UI elements or adjust the layout as needed -->
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+
+        >
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,20 +36,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Add Item" />
+                    android:backgroundTint="@color/angels_black"
+                    android:text="Add Item"
+                    app:cornerRadius="8sp" />
 
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="159dp"
                     android:layout_height="153dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/angels_logo" />
+                    app:srcCompat="@drawable/logo_new" />
 
                 <Button
                     android:id="@+id/btnLogout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/angels_black"
+                    app:cornerRadius="8sp"
                     android:text="Logout" />
 
             </LinearLayout>

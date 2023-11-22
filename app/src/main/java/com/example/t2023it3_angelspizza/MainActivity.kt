@@ -21,6 +21,7 @@ import androidx.core.view.marginTop
 import com.bumptech.glide.Glide
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
+import com.google.firebase.database.collection.LLRBNode
 import com.google.firebase.firestore.FirebaseFirestore
 
 
@@ -61,6 +62,7 @@ class MainActivity : AppCompatActivity() {
                     cardView.layoutParams = layoutParams
                     cardView.cardElevation = 10f
                     cardView.radius = 20f
+                    cardView.setBackgroundResource(R.color.angels_black)
                     cardView.setContentPadding(32, 32, 32, 32)
 
                     val contentLayout = LinearLayout(this)
@@ -70,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                     val imageView = ImageView(this)
                     Glide.with(this).load(photoUrl).into(imageView)
                     val imageLayoutParams = LinearLayout.LayoutParams(
-                        resources.getDimensionPixelSize(R.dimen.fixed_width),
+                        LinearLayout.LayoutParams.MATCH_PARENT ,
                         resources.getDimensionPixelSize(R.dimen.fixed_height)
                     )
 
@@ -89,6 +91,7 @@ class MainActivity : AppCompatActivity() {
                     nameLayout.gravity = Gravity.CENTER
                     nameTextView.layoutParams = nameLayout
                     contentLayout.addView(nameTextView)
+                    nameTextView.setTextColor(getColor(R.color.white))
 
 //                    val descriptionWebView = WebView(this)
 //                    val descriptionLayout = LinearLayout.LayoutParams(
@@ -117,6 +120,8 @@ class MainActivity : AppCompatActivity() {
                     priceTextView.text = "$price"
                     priceTextView.layoutParams = priceLayout
                     priceDetails.addView(priceTextView)
+                    priceTextView.setTextColor(getColor(R.color.white))
+
 
                     val spaceView = View(this)
                     spaceView.layoutParams = LinearLayout.LayoutParams(
