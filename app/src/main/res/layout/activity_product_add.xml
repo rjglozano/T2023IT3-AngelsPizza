@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:backgroundTint="#000000"
+            android:backgroundTint="@color/angels_black"
             android:text="Add Item"
             android:textColorLink="#000000"
             app:cornerRadius="3dp" />
