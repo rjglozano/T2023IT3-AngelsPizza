@@ -11,63 +11,69 @@
     tools:ignore="ExtraText">
 
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent" >
 
-        <EditText
-            android:id="@+id/editTextItemName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Item Name"
-            android:minHeight="48dp" />
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editTextItemDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="Item Description"
-            android:minHeight="48dp" />
+            <EditText
+                android:id="@+id/editTextItemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Item Name"
+                android:minHeight="48dp" />
 
-        <EditText
-            android:id="@+id/editTextItemPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="Item Price"
-            android:inputType="numberDecimal"
-            android:minHeight="48dp" />
+            <EditText
+                android:id="@+id/editTextItemDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Item Description"
+                android:minHeight="48dp" />
 
-        <EditText
-            android:id="@+id/editTextItemPhotoUrl"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="Item Photo Url"
-            android:minHeight="48dp" />
+            <EditText
+                android:id="@+id/editTextItemPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Item Price"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp" />
 
-        <Button
-            android:id="@+id/buttonAddItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/angels_black"
-            android:text="Add Item"
-            android:textColorLink="#000000"
-            app:cornerRadius="3dp" />
+            <EditText
+                android:id="@+id/editTextItemPhotoUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Item Photo Url"
+                android:minHeight="48dp" />
 
-        <Button
-            android:id="@+id/btnBackToMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/angels_black"
-            android:text="Back to Menu"
-            app:cornerRadius="3dp" />
+            <Button
+                android:id="@+id/buttonAddItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/angels_black"
+                android:text="Add Item"
+                android:textColorLink="#000000"
+                app:cornerRadius="3dp" />
 
-    </LinearLayout>
-    <![CDATA[
+            <Button
+                android:id="@+id/btnBackToMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/angels_black"
+                android:text="Back to Menu"
+                app:cornerRadius="3dp" />
+
+        </LinearLayout>
+    </ScrollView><![CDATA[
+
+
 
     />
 
